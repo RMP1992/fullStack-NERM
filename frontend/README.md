@@ -1,3 +1,22 @@
+### Description
+
+This app is to going to a maximum of 5 API's, using node.js, express, mongoDB and React.
+It is intented to using react as means to remove the need to load a different page.
+Users will have the ability to choose which API they would like to display.
+
+### Issues and Errors
+
+Many!!
+I first attempted this project by following a tutorial but I ultimately was quite understanding what the tutorial was doing and I decided to restart this project from scratch.
+
+My first error was trying to get the Cat facts API to diplay a fact at random, I learned that I can't use math.random and pass a variable that is not a number, as one of its parameters
+Instead, (with help) I used math.random to create a random number and pass that as the index.
+
+Second error, trying to access the object of the getQuotes API, but the object doesn't have a name. Console log just returns "undefined" and it is being right prick about it. So the solution was actually very simple, adding insult to injury, I did not need to loop through the object 
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +85,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+

@@ -5,7 +5,7 @@ import Quotes from './components/Quotes';
 import Music from './components/Music';
 import Manga from './components/Manga';
 import Login from './components/Login';
-import Modal from 'react-modal';
+
 import './App.css';
 
 export class App extends Component {
@@ -78,7 +78,7 @@ callManga = () =>{
     
 }
 
-componentWillMount() {
+componentDidMount() {
   this.callCatfacts();
   this.callNasa();
   this.callQuotes();
@@ -90,15 +90,15 @@ componentWillMount() {
     return (
       <React.Fragment>
         <div id="btn-container">
-          <Catfacts func={this.toggleCatfacts} />
-          <Nasa func={this.toggleNasa} />
-          <Quotes func={this.toggleQuotes} />
-          <Music func={this.toggleMusic} />
-          <Manga func={this.toggleManga} />
+          <Catfacts func={this.toggleCatfacts} Cat={this.state.apiCatfacts}/>
+          <Nasa func={this.toggleNasa} Nasa={this.state.apiNasa}/>
+          <Quotes func={this.toggleQuotes} Quotes={this.state.apiQuotes}/>
+          <Music func={this.toggleMusic} Music={this.state.apiMusic}/>
+          <Manga func={this.toggleManga} Manga={this.state.apiManga}/>
           <Login />
           
         </div>
-        {this.state.showCatfacts === true ?
+        {/* {this.state.showCatfacts === true ?
           <div>
             <p>{this.state.apiCatfacts}</p>
           </div> : null
@@ -107,7 +107,7 @@ componentWillMount() {
           <div>
             <img src={this.state.apiNasa} alt="nasa" />
           </div> : null
-        }
+        } */}
         {this.state.showQuotes === true ?
           <div>
             <p>{this.state.apiQuotes}</p>
@@ -118,11 +118,11 @@ componentWillMount() {
           <p>{this.state.apiMusic}</p>
         </div> : null
         }
-        {this.state.showManga === true ?
+        {/* {this.state.showManga === true ?
         <div>
           <p>{this.state.apiManga}</p>
         </div> : null
-        }
+        } */}
       </React.Fragment>
     )
   }

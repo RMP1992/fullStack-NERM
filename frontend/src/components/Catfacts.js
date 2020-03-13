@@ -1,24 +1,17 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-
+import '../App.css';
 
 const Catfacts = (props) => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
     return (
-        <div>
-
-            
-
-        <button className="buttons" onClick={() => setModalIsOpen(true)}>Catfacts</button>
-        <Modal isOpen={modalIsOpen}>
-        {/* {props.func}  */}
-            <h2>modal is open</h2>
-            {this.state.showCatfacts === true ?
-            <div>
-                <p>{this.state.apiCatfacts}</p>
-            </div> : null
-            } 
-        </Modal>
+        <div className="cat-facts">
+            <button className="buttons" onClick={() => setModalIsOpen(true)}>Catfacts</button>
+            <Modal isOpen={modalIsOpen} className="modal">
+                <div className="cat">
+                    <h2>{props.Cat}</h2>
+                </div>
+            </Modal>
 
         </div>
     )

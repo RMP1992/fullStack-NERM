@@ -1,16 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react';
+import Modal from 'react-modal';
 
-const Buttons = (props) => {
+const Nasa = (props) => {
+    const [modalIsOpen, setModalIsOpen] = useState(false)
     return (
         <div>
-            <button className="buttons" onClick={props.func}>Nasa</button>
-            {/* {this.state.showAPI === true ?
-                <div>
-                    <img src={this.state.apiNasa} alt="nasa" />
-                </div> : null
-            } */}
+            <button className="buttons" onClick={() => setModalIsOpen(true)}>Nasa</button>
+            <Modal isOpen={modalIsOpen}>
+                <img src={props.Nasa} alt="nasa"/>
+            </Modal>
+            
         </div>
     )
 }
 
-export default Buttons
+export default Nasa

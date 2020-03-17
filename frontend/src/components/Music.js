@@ -6,7 +6,7 @@ const Music = (props) => {
     return (
         <div>
             <button className="buttons" onClick={() => setModalIsOpen(true)}>Music</button>
-            <Modal isOpen={modalIsOpen}>
+            <Modal isOpen={modalIsOpen} className="modal">
                 <h2>{props.Music}</h2>
             </Modal>
         </div>

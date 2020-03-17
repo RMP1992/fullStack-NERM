@@ -47,7 +47,8 @@ const getManga = async () =>{
         headers: {
           'x-rapidapi-host': 'community-manga-eden.p.rapidapi.com',
           'x-rapidapi-key': '6ab98c4b00mshc5c8d39099ce709p1a69e4jsn72fb98b23d2e'
-        }
+        },
+        json: true
     })
         return data.body
     }

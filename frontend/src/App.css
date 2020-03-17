@@ -1,9 +1,7 @@
 body{
   background-color: black;
   color: black;
-
 }
-
 #btn-container{
   display: flex;
   justify-content: space-evenly;
@@ -12,28 +10,66 @@ body{
   height: 100vh;
 }
 .buttons{
-  border: black 2px solid;
-  border-radius: 50%;
-  height: 15vh;
-  width: 8vw;
+  border: none;
+  background-color: black;
+  font-size: 3vw;
+  font-family: 'Futura';
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #e100ff, 0 0 30px #f700ff, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+  text-align: center;
 }
-/* .ReactModal__Overlay .ReactModal__Overlay--after-open{
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-
-} */
-/* .cat-facts{
-  height: 100vh;
-  width: 100vw;
-} */
 .modal {
+  display: flex;
+  margin-left: 10vw;
+  margin-top: 15vh;
+  align-items: center;
+  height: 70vh;
+  width: 80vw;
+  background-color: black;
+  justify-content: center;
+  outline: none;
+  
+}
+h2 {
+  font-size: 30px;
+  font-family: 'Futura';
+  color: #fff;
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #e100ff, 0 0 30px #f700ff, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.manga{
+  width: 100%;
+}
+
+.mangapic{
+  position: relative;
+ display: flex;
+ justify-content: flex-start;
+}
+
+.mangapic img{
+  height: 69vh;
+  width: 20vw;
+  
+  justify-content: flex-start;
+
+}
+
+.nasa-modal{
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 60vh;
-  width: 80vw;
-  background-color: white;
+  /* padding-left: 20vw; */
+  padding-top: 5vh;
+  outline: none;
+}
+
+.modalpic img {
+  height: 69vh;
+  width: 20vw;
 }
 
 /* .modal-container{

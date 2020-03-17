@@ -6,8 +6,10 @@ const Nasa = (props) => {
     return (
         <div>
             <button className="buttons" onClick={() => setModalIsOpen(true)}>Nasa</button>
-            <Modal isOpen={modalIsOpen}>
-                <img src={props.Nasa} alt="nasa"/>
+            <Modal isOpen={modalIsOpen} className="nasa-modal">
+                <div className="nasapic">
+                    <img src={props.Nasa} alt="nasa"/>
+                </div>
             </Modal>
             
         </div>

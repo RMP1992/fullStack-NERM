@@ -2,35 +2,32 @@ const express = require('express');
 const request = require('request');
 require('dotenv').config();
 const path = require('path');
-const hbs = require("express-handlebars");
+
 const getAPI = require('./lib/getAPI');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const app = express();
+
 
 const fs = require('fs');
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cors());
 
-app.engine('hbs', hbs({
-    defaultLayout: 'layout',
-    extname: '.hbs'
-}));
-app.set('view engine', '.hbs');
+
 
 app.get('/catfacts', async(req, res) =>{
     let data = await getAPI.getCatfacts()
     // console.log(data)
     let randomNumber = Math.floor(Math.random() * (data.all.length)-1)
     //randomNumber generates a random number
-    console.log(randomNumber);
+    // console.log(randomNumber);
     
     let facts = data.all[randomNumber].text
     //pass that random number as the index of the array
         
     // console.log(facts);
-    res.render('catfacts', {
-        facts
-    })
+    res.send(facts)
     // randomFact = (facts) =>{
     //     for (i = 0; i < facts; i++){
     //         Math.floor(Math.random() * Math.floor(facts) - 1) 
@@ -42,9 +39,7 @@ app.get('/catfacts', async(req, res) =>{
 app.get('/nasa', async(req, res) =>{
     let data = await getAPI.getNasa()
     let image = data.url
-    res.render('nasa',{
-        image
-    })
+    res.send(image)
 });
 app.get('/quotes', async(req, res) =>{
     let data = await getAPI.getQuotes()
@@ -75,13 +70,17 @@ app.get('/quotes', async(req, res) =>{
     // res.render('quotes', {
     //     content
     // })
-    res.render('quotes', {content:data.content})
+    let content = data.content
+    res.send(content)
 });
 app.get('/manga', async(req, res) =>{
     let data = await getAPI.getManga()
     // fs.writeFileSync('manga.json', data);
-    console.log(data.manga);
-
+    let randomNumber = Math.floor(Math.random() * (data.manga.length)-1)
+    
+    let randomManga = data.manga[randomNumber].t
+    // let randomImage = data.manga[randomNumber].im
+    
 
     // let randomNumber = Math.floor(Math.random() * (data.length)-1)
     // console.log(randomNumber)
@@ -90,21 +89,20 @@ app.get('/manga', async(req, res) =>{
 
     // console.log(manga)
     // // res.render('manga', {manga})
-    res.render('manga');
+    res.send(randomManga);
 });
-app.get('/music', async(req,res) =>{
+app.get('/music', async(req, res) =>{
     let data = await getAPI.getMusic()
     // console.log(data.data.length)
     let randomNumber = Math.floor(Math.random() * (data.data.length)-1)
     // fs.writeFileSync('manga.json', data);
+    console.log(data);
     
     let randomSong = data.data[randomNumber].title_short
     let randomArtist = data.data[randomNumber].artist.name
+    let musicArr = [randomArtist, randomSong]
    
-    res.render('music', {
-        artist: randomArtist,
-        music: randomSong,
-    });
+    res.send(musicArr);
 });
 mongoose.connect(`mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster-frhfb.mongodb.net/userdb?retryWrites=true&w=majority`, {
     useNewUrlParser: true,

@@ -14,6 +14,10 @@ Instead, (with help) I used math.random to create a random number and pass that 
 
 Second error, trying to access the object of the getQuotes API, but the object doesn't have a name. Console log just returns "undefined" and it is being right prick about it. So the solution was actually very simple, adding insult to injury, I did not need to loop through the object 
 
+Fixed errors that were saying that react couldn't access the logos of react, I fixed it by deleting the srcs on the manifest.json folder.
+
+I passed the states as a prop that it could be accessed by the components, which were using modals.
+
 
 
 

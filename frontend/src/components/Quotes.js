@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
-import NeonQuotes from '../images/neonQuotes.jpg'
+
 
 const Quotes = (props) => {
     const [modalIsOpen, setModalIsOpen] = useState(false)

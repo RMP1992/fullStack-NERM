@@ -108,7 +108,7 @@ componentDidMount() {
             <img src={this.state.apiNasa} alt="nasa" />
           </div> : null
         } */}
-        {this.state.showQuotes === true ?
+        {/* {this.state.showQuotes === true ?
           <div>
             <p>{this.state.apiQuotes}</p>
           </div> : null
@@ -117,7 +117,7 @@ componentDidMount() {
         <div>
           <p>{this.state.apiMusic}</p>
         </div> : null
-        }
+        } */}
         {/* {this.state.showManga === true ?
         <div>
           <p>{this.state.apiManga}</p>

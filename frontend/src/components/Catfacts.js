@@ -7,7 +7,7 @@ const Catfacts = (props) => {
     const [modalIsOpen, setModalIsOpen] = useState(false)
     return (
         <div className="cat-facts">
-            <button className="buttons" onClick={() => setModalIsOpen(true)}><a>Catfacts</a></button>
+            <button className="buttons" onClick={() => setModalIsOpen(true)}>Catfacts</button>
             <Modal isOpen={modalIsOpen} className="modal">
                 <div className="modalpic">
                     <img src={NeonCat} alt="Neon Light"/>

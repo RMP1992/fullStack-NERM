@@ -71,6 +71,7 @@ function getUser(email){
     
         userSchema.find({email}, (err, docs) =>{
             resolve(docs)
+            
         });
     });
 };

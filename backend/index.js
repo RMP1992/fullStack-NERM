@@ -113,11 +113,13 @@ app.post('/login', async(req, res)=>{
     let password = req.body.password;
     let docs = await getUser(email);
     if(docs.length == 0){
-        res.render('login', {err:"No user found"})
+        res.send({err:"No user found"})
     }
     if(docs[0].password == password && docs[0].username == username){
-        res.render('login', {err:"User found"})
+        res.send({err:"User found"})
+        console.log('this is working')
         return
+       
     }
     
 })
